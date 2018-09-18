@@ -60,9 +60,18 @@ public class MainActivity extends AppCompatActivity {
             try(InputStream inputStream0 =
                         new FileInputStream(file); ) {
 
+
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream0);
+
+                // 縮小処理
+                BitmapFactory.Options imageOptions = new BitmapFactory.Options();
+                bitmap = Bitmap.createScaledBitmap(bitmap, 480, 480, true);
+
+
                 //imageView.setImageBitmap(bitmap);
+
                 item.setBitmap(bitmap);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
