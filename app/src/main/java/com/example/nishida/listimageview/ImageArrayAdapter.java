@@ -41,7 +41,8 @@ public class ImageArrayAdapter extends ArrayAdapter<ListItem> {
 
         // アイコンをセット
         ImageView appInfoImage = (ImageView)view.findViewById(R.id.item_image);
-        appInfoImage.setImageResource(item.getImageId());
+        //appInfoImage.setImageResource(item.getImageId());
+        appInfoImage.setImageBitmap(item.getBitmap());
 
         return view;
     }
